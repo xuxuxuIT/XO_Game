@@ -1,16 +1,11 @@
-import { useState } from "react";
 import Square from "./Square";
 
-export default function Board() {
-  const [currentSquares, setCurrentSquares] = useState(Array(9).fill(null));
-  const [isXNext, setIsXNext] = useState(true);
-
+export default function Board({ currentSquares, isXNext, onChange }) {
   const handleClick = (i) => {
     if (currentSquares[i] || caculateWinner(currentSquares)) return;
     const newSquares = [...currentSquares];
     newSquares[i] = isXNext ? "X" : "O";
-    setCurrentSquares(newSquares);
-    setIsXNext((current) => !current);
+    onChange(newSquares);
   };
 
   const caculateWinner = (squares) => {

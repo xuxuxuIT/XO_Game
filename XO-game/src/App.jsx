@@ -1,11 +1,9 @@
-import Counter from "./components/Counter";
-import Board from "./components/Board/Board";
+import Game from "./components/Board/Game";
 
 function App() {
   return (
     <>
-      <Counter />
-      <Board />
+      <Game />
     </>
   );
 }
